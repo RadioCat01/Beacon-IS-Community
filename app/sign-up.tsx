@@ -1,5 +1,5 @@
 import { router, Link } from "expo-router";
-import { Text, TextInput, View, Pressable } from "react-native";
+import { Text, TextInput, View, Pressable, Image, Dimensions } from "react-native";
 import { useState } from "react";
 import { useSession } from "@/context";
 
@@ -26,17 +26,28 @@ export default function SignUp() {
     }
   };
 
+  const { width, height } = Dimensions.get('window');
+  
   return (
     <View className="flex-1 justify-center items-center p-4 bg-white">
-      
-      <View className="items-center mb-8">
-        <Text className="text-2xl font-bold text-gray-800 mb-2">
+        <Image source={require('../assets/images/wave.jpg')}
+             style={{
+              position: 'absolute',
+              top: 0,
+              right: 0, 
+              width: width, 
+              height: height, 
+              opacity: 0.2,
+            }} />
+      <View className="items-start mb-8 ml-[-30px]">
+        <Text className="text-5xl font-bold text-gray-800 mb-2 ml-[-4px]">
           Create Account
         </Text>
         <Text className="text-sm text-gray-500">
           Sign up to get started
         </Text>
       </View>
+
 
       
       <View className="w-full max-w-[300px] space-y-4 mb-8">
@@ -65,7 +76,7 @@ export default function SignUp() {
             textContentType="emailAddress"
             keyboardType="email-address"
             autoCapitalize="none"
-            className="w-full p-3 border border-gray-300 rounded-lg text-base bg-white"
+            className="w-full p-3 border border-gray-300 rounded-lg bg-white"
           />
         </View>
 
@@ -79,7 +90,7 @@ export default function SignUp() {
             onChangeText={setPassword}
             secureTextEntry
             textContentType="newPassword"
-            className="w-full p-3 border border-gray-300 rounded-lg text-base bg-white"
+            className="w-full p-3 border border-gray-300 rounded-lg bg-white"
           />
         </View>
       </View>
@@ -89,7 +100,7 @@ export default function SignUp() {
         onPress={handleSignUpPress}
         className="bg-blue-600 w-full max-w-[300px] py-3 rounded-lg active:bg-blue-700"
       >
-        <Text className="text-white font-semibold text-base text-center">
+        <Text className="text-white font-semibold text-center">
           Sign Up
         </Text>
       </Pressable>

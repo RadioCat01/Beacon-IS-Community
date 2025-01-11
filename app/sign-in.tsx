@@ -1,8 +1,8 @@
 import { router, Link } from "expo-router";
-import { Text, TextInput, View, Pressable } from "react-native";
+import { Text, TextInput, View, Pressable, Image, Dimensions } from "react-native";
 import { useState } from "react";
 import { useSession } from "@/context";
-import { StyleSheet } from "react-native";
+
 
 export default function SignIn() {
 
@@ -24,16 +24,32 @@ export default function SignIn() {
     router.replace("./(app)/(drawer)/(tabs)/");
   }; 
 
+  const { width, height } = Dimensions.get('window');
+
   return (
     <View className="flex-1 justify-center items-center p-4 bg-white">
-   
-    <View className="items-center mb-8">
-      <Text className="text-2xl font-bold text-gray-800 mb-2">
-        Welcome Back
-      </Text>
-      <Text className="text-sm text-gray-500">
-        Please sign in to continue
-      </Text>
+    <Image source={require('../assets/images/wave.jpg')}
+             style={{
+              position: 'absolute',
+              top: 0,
+              right: 0, 
+              width: width, 
+              height: height, 
+              opacity: 0.2,
+            }} />
+    <Image source={require('../assets/images/pngwing.com.png')}
+             style={{
+              position: 'absolute',
+              top: 180,
+              right: 20, 
+              width: 80, 
+              height: 120, 
+              opacity: 1,
+            }} />
+    <View className="mb-10 ml-[-60px]">
+      <Text className="text-2xl font-bold text-gray-800">Welcome To</Text>
+      <Text className="text-8xl font-bold text-gray-800">Beacon</Text>
+      <Text className="text-sm text-gray-500 ml-1">Please sign in to continue</Text>
     </View>
 
     <View className="w-full max-w-[300px] space-y-4 mb-8">
@@ -42,13 +58,12 @@ export default function SignIn() {
           Email
         </Text>
         <TextInput
-          placeholder="name@mail.com"
           value={email}
           onChangeText={setEmail}
           textContentType="emailAddress"
           keyboardType="email-address"
           autoCapitalize="none"
-          className="w-full p-3 border border-gray-300 rounded-lg text-base bg-white"
+          className="w-full p-3 border border-gray-300 rounded-lg bg-white"
         />
       </View>
 
@@ -62,7 +77,7 @@ export default function SignIn() {
           onChangeText={setPassword}
           secureTextEntry
           textContentType="password"
-          className="w-full p-3 border border-gray-300 rounded-lg text-base bg-white"
+          className="w-full p-3 border border-gray-300 rounded-lg bg-white"
         />
       </View>
     </View>
@@ -72,7 +87,7 @@ export default function SignIn() {
       onPress={handleSignInPress}
       className="bg-blue-600 w-full max-w-[300px] py-3 rounded-lg active:bg-blue-700"
     >
-      <Text className="text-white font-semibold text-base text-center">
+      <Text className="text-white font-semibold text-center">
         Sign In
       </Text>
     </Pressable>
@@ -85,6 +100,7 @@ export default function SignIn() {
         </Pressable>
       </Link>
     </View>
+    
   </View>
   );
 }
