@@ -1,0 +1,41 @@
+//import { router, Link } from "expo-router";
+import { Text, TextInput, View, Pressable } from "react-native";
+import { useState } from "react";
+import { useSession } from "@/context";
+import { StyleSheet } from "react-native";
+
+export default function SignIn() {
+
+  /*const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signIn } = useSession();
+
+  const handleLogin = async () => {
+    try {
+      return await signIn(email, password);
+    } catch (err) {
+      console.log("[handleLogin] ==>", err);
+      return null;
+    }
+  };
+
+  const handleSignInPress = async () => {
+    const resp = await handleLogin();
+    router.replace("/(app)/(drawer)/(tabs)/");
+  }; */
+
+  return (
+    <View style={styles.container}>
+        <Text>This is signup page</Text>
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+    container:{
+      flex:1,
+      backgroundColor:'#fff',
+      justifyContent:'center',
+      alignItems:'center'
+    }
+  });
