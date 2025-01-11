@@ -25,8 +25,8 @@ export default function SignIn() {
   }; */
 
   return (
-    <View style={styles.container}>
-        <Text>This is signup page</Text>
+    <View className="flex-1 bg-white items-center justify-center">
+        <Text>This is signup page!</Text>
     </View>
   );
 }

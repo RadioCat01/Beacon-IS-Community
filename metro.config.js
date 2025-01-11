@@ -1,6 +1,12 @@
-const { getDefaultConfig } = require('@expo/metro-config');
+const { getDefaultConfig } = require("@expo/metro-config");
+const { withNativeWind } = require("nativewind/metro");
 
-const defaultConfig = getDefaultConfig(__dirname);
-defaultConfig.resolver.sourceExts.push('cjs');
+const config = getDefaultConfig(__dirname);
 
-module.exports = defaultConfig;
+
+config.resolver.sourceExts = [...config.resolver.sourceExts, "mjs", "cjs"];
+config.resolver.extraNodeModules = {
+  ...config.resolver.extraNodeModules,
+};
+
+module.exports = withNativeWind(config, { input: "./global.css" });

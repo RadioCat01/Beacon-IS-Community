@@ -1,6 +1,6 @@
-//import { Slot } from "expo-router";
+
 import { useSession } from "@/context";
-//import { Redirect } from 'expo-router';
+import { Redirect, Slot } from "expo-router";
 import { View, Text } from "react-native";
 import { StyleSheet } from "react-native";
 
@@ -13,14 +13,10 @@ export default function AppLayout() {
   }
 
   if (!user) {
-    return (<View style={styles.container}>
-        <Text>Signed In</Text>
-    </View>);
+    return <Redirect href="/sign-in" />;
   }
 
-  return (<View style={styles.container}>
-            <Text>Signed In</Text>
-        </View>);
+  return <Slot />;
 }
 
 const styles = StyleSheet.create({
