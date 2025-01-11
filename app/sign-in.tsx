@@ -1,4 +1,4 @@
-//import { router, Link } from "expo-router";
+import { router, Link } from "expo-router";
 import { Text, TextInput, View, Pressable } from "react-native";
 import { useState } from "react";
 import { useSession } from "@/context";
@@ -26,16 +26,7 @@ export default function SignIn() {
 
   return (
     <View className="flex-1 bg-white items-center justify-center">
-        <Text>This is signup page!</Text>
+        <Text className="color-blue-500">This is signup page!</Text>
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-    container:{
-      flex:1,
-      backgroundColor:'#fff',
-      justifyContent:'center',
-      alignItems:'center'
-    }
-  });

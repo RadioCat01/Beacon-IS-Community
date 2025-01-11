@@ -13,6 +13,7 @@ export default function AppLayout() {
   }
 
   if (!user) {
+    console.log('No user found. Redirecting to sign-in page...');
     return <Redirect href="/sign-in" />;
   }
 
