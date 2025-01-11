@@ -37,19 +37,21 @@ export default function SignIn() {
               height: height, 
               opacity: 0.2,
             }} />
-    <Image source={require('../assets/images/pngwing.com.png')}
-             style={{
-              position: 'absolute',
-              top: 180,
-              right: 20, 
-              width: 80, 
-              height: 120, 
-              opacity: 1,
-            }} />
-    <View className="mb-10 ml-[-60px]">
-      <Text className="text-2xl font-bold text-gray-800">Welcome To</Text>
-      <Text className="text-8xl font-bold text-gray-800">Beacon</Text>
-      <Text className="text-sm text-gray-500 ml-1">Please sign in to continue</Text>
+    
+    <View className="mb-10">
+      <Text className="text-3xl font-bold text-gray-800 mb-[-20px]">Welcome To</Text>
+          <View style={{ flexDirection: 'row', alignItems: 'center', height:100 }} className="ml-[-2px]">
+              <Text style={{ fontSize: 74, fontWeight: 'bold', color: 'gray-800' }}>Beacon</Text>
+              <Image 
+                source={require('../assets/images/pngwing.com.png')} 
+                style={{
+                width: 80, 
+                height: 120, 
+                marginLeft: -14,
+                marginBottom: 70
+                         }} />
+          </View>
+      <Text className="text-base text-gray-500 ml-1 mt-[-10px]">Please sign in to continue</Text>
     </View>
 
     <View className="w-full max-w-[300px] space-y-4 mb-8">
