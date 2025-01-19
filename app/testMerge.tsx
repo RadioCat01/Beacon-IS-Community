@@ -4,8 +4,10 @@ import React from 'react'
 const TestMerge = () => {
   return (
     <View>
-      <Text>TestMerge</Text>
+      <Text>TestMerge Pawan</Text>
+
     </View>
+    
   )
 }
 
