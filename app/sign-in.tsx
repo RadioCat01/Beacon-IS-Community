@@ -2,19 +2,26 @@ import { router, Link } from "expo-router";
 import { Text, TextInput, View, Pressable, Image, Dimensions } from "react-native";
 import { useState } from "react";
 import { useSession } from "@/context";
+import { handleUserPresence, setUserOnlineStatus } from "@/lib/firebase-config";
 
 
 export default function SignIn() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { signIn } = useSession();
+  const { signIn, user } = useSession();
 
   const handleLogin = async () => {
     try {
-      return await signIn(email, password);
+      const userCredentials = await signIn(email, password);
+      
+      if (userCredentials) {
+        const userId = userCredentials.uid;
+        setUserOnlineStatus(userId, true); 
+        handleUserPresence(userId);
+      }
     } catch (err) {
-      console.log("[handleLogin] ==>", err);
+      console.log("Login Failed", err);
       return null;
     }
   };
