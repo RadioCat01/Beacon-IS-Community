@@ -2,6 +2,7 @@ import { router, Link } from "expo-router";
 import { Text, TextInput, View, Pressable, Image, Dimensions } from "react-native";
 import { useState } from "react";
 import { useSession } from "@/context";
+import { writeUserData } from "@/lib/firebase-config";
 
 export default function SignUp() {
 
@@ -12,7 +13,14 @@ export default function SignUp() {
 
   const handleRegister = async () => {
     try {
-      return await signUp(email, password, name);
+      const response = await signUp(email, password, name);
+      if(response){
+        const uid = response.uid!;
+        const email = response.email!;
+        const name= response.displayName!;
+        await writeUserData(uid, name, email);
+        router.replace("./(app)/(drawer)/(tabs)/");
+      }
     } catch (err) {
       console.log("[handleRegister] ==>", err);
       return null;
@@ -21,9 +29,6 @@ export default function SignUp() {
 
   const handleSignUpPress = async () => {
     const resp = await handleRegister();
-    if (resp) {
-      router.replace("./(app)/(drawer)/(tabs)/");
-    }
   };
 
   const { width, height } = Dimensions.get('window');
