@@ -39,7 +39,7 @@ export default function SignUp() {
               height: height, 
               opacity: 0.2,
             }} />
-      <View className="items-start mb-8 ml-[-30px]">
+      <View className="items-center mb-16 mt-[-28px] ml-[-0px]">
         <Text className="text-5xl font-bold text-gray-800 mb-2 ml-[-4px]">
           Create Account
         </Text>
