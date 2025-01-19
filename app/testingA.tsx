@@ -4,7 +4,7 @@ import React from 'react'
 const TestMerge = () => {
   return (
     <View>
-      <Text>TestMerge Pawan</Text>
+      <Text>Gita</Text>
 
     </View>
     
