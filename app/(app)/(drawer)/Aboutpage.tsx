@@ -7,7 +7,7 @@ const Aboutpage = () => {
 
   return (
     <View className='flex-1 justify-center'>
-      <Text className='text-[40px] color-red-500 border pt-7'>This is about page</Text>
+      <Text className='text-[40px] color-red-500 border pt-7'>This is about page aaaa</Text>
     </View>
   )
 }
