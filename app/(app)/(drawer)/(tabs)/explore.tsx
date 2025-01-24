@@ -1,5 +1,6 @@
 import Ionicons from "@expo/vector-icons/Ionicons";
 import { Slot } from "expo-router";
+import React from "react";
 import { StyleSheet, Image, Text, View } from "react-native";
 
 export default function TabTwoScreen() {
