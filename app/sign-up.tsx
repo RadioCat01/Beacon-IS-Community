@@ -3,6 +3,7 @@ import { Text, TextInput, View, Pressable, Image, Dimensions } from "react-nativ
 import { useState } from "react";
 import { useSession } from "@/context";
 import { writeUserData } from "@/lib/firebase-config";
+import React from "react";
 
 export default function SignUp() {
 
