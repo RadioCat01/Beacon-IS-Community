@@ -11,7 +11,9 @@ export default function RootLayout() {
   return (
    <SessionProvider>
       <GestureHandlerRootView style={{ flex: 1 }}>
-          <SafeAreaProvider><Slot/></SafeAreaProvider>
+          <SafeAreaProvider>
+            <Slot/>
+          </SafeAreaProvider>
       </GestureHandlerRootView>
    </SessionProvider>
   );
