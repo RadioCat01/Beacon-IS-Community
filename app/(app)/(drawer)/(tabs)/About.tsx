@@ -1,13 +1,12 @@
 import { View, Text } from 'react-native'
 import React from 'react'
 
-const TestMerge = () => {
+const About = () => {
   return (
     <View>
-      <Text>This is new change!</Text>
+      <Text>this is about page</Text>
     </View>
-    
   )
 }
 
-export default TestMerge
+export default About
