@@ -1,3 +1,5 @@
+
+
 import React, { useState } from "react";
 
 const Home: React.FC = () => {
@@ -43,46 +45,115 @@ const Home: React.FC = () => {
     }, 3000);
   };
 
-  // Handle back button to close the form
-  React.useEffect(() => {
-    const handleBackButton = () => {
-      if (isFormOpen) {
-        setIsFormOpen(false);
-        return true;
-      }
-      return false;
-    };
-
-    window.history.pushState(null, "", window.location.href);
-    window.addEventListener("popstate", handleBackButton);
-
-    return () => {
-      window.removeEventListener("popstate", handleBackButton);
-    };
-  }, [isFormOpen]);
-
   return (
-    <div className="overflow-auto h-screen">
-    <div className="p-6 bg-gray-100 min-h-screen flex items-center justify-center">
-      {!isFormOpen && (
-        <div className="bg-white rounded-lg shadow-lg p-8 max-w-3xl w-full text-center">
-          <h1 className="text-2xl font-bold text-gray-700 mb-2">
-            Your Information is Valuable to Manage Disasters
-          </h1>
-          <p className="text-gray-600 mb-6">
-            Inform us about changes, incidents, or disasters in your area. Your contribution helps
-            us respond quickly and effectively.
-          </p>
-          <button
-            className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-all"
-            onClick={() => setIsFormOpen(true)}
-          >
-            Inform About Disaster
-          </button>
+    <div className="overflow-auto h-screen bg-gray-100">
+      {/* 🔴 Hero Section with Emergency Contact Info */}
+      <div className="relative w-full h-[400px] bg-cover bg-center text-white flex flex-col justify-center items-center bg-[url('https://source.unsplash.com/1600x900/?disaster,emergency')]">
+        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="relative text-center px-6">
+          <h1 className="text-4xl font-bold mb-4">Report Disasters & Help Save Lives</h1>
+          <p className="text-lg mb-6">Your reports help emergency teams respond faster and save communities.</p>
+          <div className="bg-red-600 text-white px-6 py-3 rounded-lg shadow-lg">
+            <p className="font-semibold text-lg">Emergency Hotline: +94 112 456 789</p>
+          </div>
         </div>
-      )}
+      </div>
 
-      {isFormOpen && (
+      {/* 🔵 Key Statistics & Impact Information */}
+      {/* <div className="max-w-5xl mx-auto py-12 px-5 text-center">
+        <h2 className="text-2xl font-bold text-gray-700 mb-6">Impact of Your Reports</h2>
+        <div className="grid grid-cols-3 gap-6 text-white">
+          <div className="bg-blue-600 p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold">1,250+</h3>
+            <p>Disasters Reported</p>
+          </div>
+          <div className="bg-green-600 p-6 rounded-lg shadow-lg">
+            <h3 className="text-3xl font-bold">95%</h3>
+            <p>Cases Resolved</p>
+          </div>
+          <div className="bg-orange-600 p-6 rounded-lg shadow-lg">
+            <h3 className="text-2xl font-bold">50% Faster</h3>
+            <p>Emergency Response Time</p>
+          </div>
+        </div>
+      </div> */}
+
+      <div className="max-w-5xl mx-auto py-12 px-5 text-center">
+        <h2 className="text-2xl font-bold text-gray-700 mb-6">Impact of Your Reports</h2>
+        <div className="space-y-6 text-white">
+          <div className="bg-blue-600 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center">
+        <h3 className="text-2xl font-bold">1,250+</h3>
+        <p>Disasters Reported</p>
+          </div>
+          <div className="bg-green-600 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center">
+        <h3 className="text-3xl font-bold">95%</h3>
+        <p>Cases Resolved</p>
+          </div>
+          <div className="bg-orange-600 p-6 rounded-lg shadow-lg flex flex-col items-center justify-center">
+        <h3 className="text-2xl font-bold">50% Faster</h3>
+        <p>Emergency Response Time</p>
+          </div>
+        </div>
+      </div>
+
+      {/* 🟢 Guidelines for Effective Reporting */}
+      <div className="max-w-4xl mx-auto py-12 px-6">
+        <h2 className="text-2xl font-bold text-gray-700 mb-6 text-center">How to Report Effectively</h2>
+        <div className="grid grid-cols-3 gap-6">
+          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <h3 className="text-lg font-bold text-gray-700 mb-2">Step 1</h3>
+            <p className="text-gray-600">Provide detailed location and type of disaster.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <h3 className="text-lg font-bold text-gray-700 mb-2">Step 2</h3>
+            <p className="text-gray-600">Attach clear photos if possible.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md text-center">
+            <h3 className="text-lg font-bold text-gray-700 mb-2">Step 3</h3>
+            <p className="text-gray-600">Provide a valid contact number for responders.</p>
+          </div>
+        </div>
+      </div>
+
+      {/* 🟠 Real-Time Disaster Updates (Static UI for now) */}
+      {/* <div className="max-w-5xl mx-auto py-12 px-6">
+        <h2 className="text-2xl font-bold text-gray-700 mb-6 text-center">Real-Time Disaster Updates</h2>
+        <div className="bg-gray-100 p-6 rounded-lg shadow-md">
+          <ul className="space-y-4">
+            <li className="flex justify-between bg-white p-4 rounded-md shadow">
+              <span className="font-semibold">Flood Alert - Colombo</span>
+              <span className="text-red-500">⚠️ High Risk</span>
+            </li>
+            <li className="flex justify-between bg-white p-4 rounded-md shadow">
+              <span className="font-semibold">Landslide Warning - Kandy</span>
+              <span className="text-yellow-500">⚠️ Moderate Risk</span>
+            </li>
+            <li className="flex justify-between bg-white p-4 rounded-md shadow">
+              <span className="font-semibold">Tsunami Alert - Galle</span>
+              <span className="text-red-500">⚠️ High Risk</span>
+            </li>
+          </ul>
+        </div>
+      </div> */}
+
+      {/* 🔴 Disaster Reporting Form Section */}
+      <div className="p-6 flex items-center justify-center mt-0">
+        {!isFormOpen && (
+          <div className="bg-white rounded-lg shadow-lg p-8 max-w-3xl w-full text-center">
+            <h2 className="text-2xl font-bold text-gray-700 mb-2">Your Information is Valuable</h2>
+            <p className="text-gray-600 mb-6">
+              Inform us about disasters in your area. Your contribution helps us respond quickly.
+            </p>
+            <button
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition-all"
+              onClick={() => setIsFormOpen(true)}
+            >
+              Inform About Disaster
+            </button>
+          </div>
+        )}
+
+{isFormOpen && (
         <div className="bg-gray-50 p-6 rounded-lg shadow-lg text-left w-full max-w-3xl">
           <h2 className="text-xl font-semibold text-gray-700 mb-4">Disaster Incident Form</h2>
           <form onSubmit={handleSubmit} className="space-y-4">
