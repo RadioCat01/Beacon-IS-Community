@@ -150,3 +150,6 @@ const Info: React.FC = () => {
 };
 
 export default Info;
+
+
+
