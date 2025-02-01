@@ -1,4 +1,4 @@
-//disaster page (original one is now index)
+// //disaster page (original one is now index)
 
 
 import React from "react";
@@ -88,7 +88,7 @@ const cardStyles = StyleSheet.create({
 
 export default ExploreScreen;
 
-// screens/explorer.js
+// screen/explorer.js
 
 
 
@@ -217,4 +217,131 @@ export default ExploreScreen;
 //     borderRadius: 8,
 //   },
 //   itemText: { fontSize: 18 },
+// });
+
+
+
+
+
+
+
+
+
+//2025/02/001
+
+// Update flood.tsx
+// import { Link } from 'expo-router';
+// import { Ionicons } from '@expo/vector-icons';
+// import { ScrollView, View, Text, StyleSheet } from 'react-native';
+
+// const FloodScreen = () => {
+//   return (
+//     <ScrollView contentContainerStyle={styles.container}>
+//       <View style={styles.header}>
+//         <Link href="../" style={styles.backButton}>
+//           <Ionicons name="arrow-back" size={24} color="#007AFF" />
+//         </Link>
+//         <Text style={styles.title}>Flood Preparedness</Text>
+//       </View>
+
+//       <View style={styles.section}>
+//         <Text style={styles.sectionTitle}>Understanding Floods</Text>
+//         <Text style={styles.text}>
+//           Floods can occur suddenly due to heavy rainfall, river overflow, 
+//           or dam failures. Being prepared can save lives and property.
+//         </Text>
+//       </View>
+
+//       <View style={styles.section}>
+//         <Text style={styles.sectionTitle}>Safety Checklist</Text>
+//         {[
+//           'Monitor weather alerts',
+//           'Prepare emergency kit',
+//           'Know evacuation routes',
+//           'Elevate critical utilities',
+//           'Avoid flood waters'
+//         ].map((item, index) => (
+//           <View key={index} style={styles.listItem}>
+//             <Ionicons name="checkmark-circle" size={18} color="#4CAF50" />
+//             <Text style={styles.listText}>{item}</Text>
+//           </View>
+//         ))}
+//       </View>
+
+//       <View style={styles.emergencySection}>
+//         <Ionicons name="warning" size={32} color="#FF3B30" />
+//         <Text style={styles.emergencyText}>
+//           Emergency Contacts:{"\n"}
+//           <Text style={styles.emergencyNumber}>117 (General Emergency)</Text>{"\n"}
+//           <Text style={styles.emergencyNumber}>123-456-7890 (Flood Helpline)</Text>
+//         </Text>
+//       </View>
+//     </ScrollView>
+//   );
+// };
+
+// // Update styles
+// const styles = StyleSheet.create({
+//   container: {
+//     flexGrow: 1,
+//     padding: 20,
+//     backgroundColor: '#fff',
+//   },
+//   header: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     marginBottom: 25,
+//   },
+//   backButton: {
+//     marginRight: 15,
+//   },
+//   title: {
+//     fontSize: 24,
+//     fontWeight: '700',
+//     color: '#1A237E',
+//   },
+//   section: {
+//     marginBottom: 25,
+//     backgroundColor: '#F5F5F5',
+//     borderRadius: 12,
+//     padding: 16,
+//   },
+//   sectionTitle: {
+//     fontSize: 20,
+//     fontWeight: '600',
+//     color: '#0D47A1',
+//     marginBottom: 12,
+//   },
+//   text: {
+//     fontSize: 16,
+//     lineHeight: 24,
+//     color: '#424242',
+//   },
+//   listItem: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     marginVertical: 6,
+//   },
+//   listText: {
+//     fontSize: 16,
+//     marginLeft: 8,
+//     color: '#616161',
+//   },
+//   emergencySection: {
+//     flexDirection: 'row',
+//     alignItems: 'center',
+//     backgroundColor: '#FFEBEE',
+//     padding: 20,
+//     borderRadius: 12,
+//     marginTop: 20,
+//   },
+//   emergencyText: {
+//     fontSize: 16,
+//     marginLeft: 15,
+//     color: '#B71C1C',
+//     lineHeight: 24,
+//   },
+//   emergencyNumber: {
+//     fontWeight: '500',
+//   },
 // });
