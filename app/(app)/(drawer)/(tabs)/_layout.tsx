@@ -1,13 +1,14 @@
+//bottom navigation bar
+
 import { Tabs } from "expo-router";
 import React from "react";
 import { useNavigation } from "expo-router";
 import { Ionicons } from "@expo/vector-icons";
-import { Pressable, View, Text } from "react-native";
+import { Pressable } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { useColorScheme } from "@/hooks/useColorScheme";
 import { DrawerNavigationProp } from "@react-navigation/drawer";
-import { TabBarIcon } from "@/components/navigation/TabBarIcon";
-
+import { TabBarIcon } from "@/components/navigation/TabBarIcon"; // Assuming this is your custom icon component
 
 export default function TabLayout() {
   const colorScheme = useColorScheme();
@@ -30,7 +31,7 @@ export default function TabLayout() {
     >
       <Tabs.Screen
         name="index"
-        options={{
+         options={{
           title: "Home",
           tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
@@ -41,13 +42,34 @@ export default function TabLayout() {
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="explorer"
         options={{
-          headerLeft: () => null,
           title: "Explore",
           tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon name={focused ? "map" : "map-outline"} color={color} />
+          ),
+        }}
+      />
+     <Tabs.Screen
+  name="disasterSubmit"
+  options={{
+    title: "Inform",
+    tabBarIcon: ({ color, focused }) => (
+      <TabBarIcon
+        name={focused ? "alert-circle" : "alert-circle-outline"}
+        color={color}
+      />
+    ),
+  }}
+/>
+
+      <Tabs.Screen
+        name="info"
+        options={{
+          title: "Info",
+          tabBarIcon: ({ color, focused }) => (
             <TabBarIcon
-              name={focused ? "code-slash" : "code-slash-outline"}
+              name={focused ? "information-circle" : "information-circle-outline"}
               color={color}
             />
           ),
