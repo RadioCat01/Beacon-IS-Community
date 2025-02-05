@@ -42,3 +42,4 @@ app-example
 #firebase config
 firebase-config.ts
 lib/fire-baseCredentials.tsx
+lib/fire-baseCredentials.tsx
