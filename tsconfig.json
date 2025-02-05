@@ -4,11 +4,10 @@
     "jsx": "react",
     "strict": true,
     "paths": {
-      "@/*": ["./*"]
-    },
-    "types": ["react-native", "expo"], // Ensure react-native and expo types are included
-    "skipLibCheck": true,            // Skip type checks on libraries to avoid conflicts
-    "esModuleInterop": true          // Ensure ES module compatibility
+      "@/*": [
+        "./*"
+      ]
+    }
   },
   "include": [
     "**/*.ts",
