@@ -7,6 +7,8 @@ import { Drawer } from "expo-router/drawer";
 const DrawerLayout = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
+      <Drawer>   
+     
         <Drawer.Screen
           name="(tabs)"
           options={{
@@ -19,13 +21,6 @@ const DrawerLayout = () => {
           options={{
             drawerLabel: "Profile", 
             title: "Profile", 
-          }}
-        />
-        <Drawer.Screen
-          name="Aboutpage"
-          options={{
-            drawerLabel: "Aboutpage", 
-            title: "Aboutpage", 
           }}
         />
       </Drawer>
