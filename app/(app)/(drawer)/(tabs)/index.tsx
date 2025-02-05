@@ -1,6 +1,4 @@
 
-//new 
-
 import React from "react";
 import Lottie from "react-lottie";
 import rain from "./rain.json";
