@@ -35,5 +35,6 @@ yarn-error.*
 # typescript
 *.tsbuildinfo
 
-#firebase config
+app-example
+
 lib/fire-baseCredentials.tsx
