@@ -23,30 +23,44 @@ const Aboutpage = () => {
     });
   }, []);
 
-  return (
-    <View style={styles.container}>
-     
-      <View style={styles.welcomeSection}>
-        <Text style={styles.welcomeText}>Welcome back,</Text>
-      </View>
+  const displayName = user?.displayName || user?.email?.split('@')[0] || 'Guest';
 
-     
-      <View style={styles.usersSection}>
-        <Text style={styles.heading}>Online Users</Text>
-        {onlineUsers.length > 0 ? (
-          <FlatList
-            data={onlineUsers}
-            keyExtractor={(item) => item.id}
-            renderItem={({ item }) => (
-              <View style={styles.userItem}>
-                <Text style={styles.userNameList}>{item.username || "Unknown"}</Text>
-              </View>
-            )}
-          />
-        ) : (
-          <Text style={styles.noUsersText}>No users are currently online.</Text>
-        )}
+  return (
+    <View className="flex-1 justify-center items-center p-4">
+       <View className="mt-6 w-full">
+           <Text className="text-[18px] font-bold text-blue-900 mb-4 w-full">Online Users</Text>
+            <FlatList
+                   data={onlineUsers}
+                  keyExtractor={(item) => item.id}
+                     horizontal 
+                  style={{ maxHeight: 150 }} 
+                    renderItem={({ item }) => (
+           <View className="items-center p-4 mb-4 mr-[-20px]">
+        
+            <View className="w-16 h-16 bg-gray-300 rounded-full justify-center items-center mb-2">
+          
+          <Text className="text-4xl font-bold text-white">{item.username?.charAt(0) || "?"}</Text>
+            </View>
+        
+           <Text className="text-[16px] font-bold text-gray-800">{item.username || "Unknown"}</Text>
+            <Text className="text-[12px] text-gray-600">{item.email}</Text>
+             </View>
+                  )}
+            ListEmptyComponent={<Text className="text-lg text-center text-gray-500">No users online</Text>}
+                 />
       </View>
+      <View className="items-center mb-8">
+        <Text className="text-xl font-bold text-gray-800 mb-2">
+          Welcome back,
+        </Text>
+        <Text className="text-2xl font-bold text-blue-600">
+          {displayName}
+        </Text>
+        <Text className="text-sm text-gray-500 mt-2">
+          {user?.email}
+        </Text>
+      </View>
+  
       <Pressable
         onPress={handleLogout}
         className="bg-red-500 px-6 py-3 rounded-lg active:bg-red-600"
@@ -56,50 +70,5 @@ const Aboutpage = () => {
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding: 20,
-    backgroundColor: "#f9f9f9",
-  },
-  welcomeSection: {
-    alignItems: "center",
-    marginBottom: 20,
-  },
-  welcomeText: {
-    fontSize: 18,
-    color: "#555",
-  },
-  userName: {
-    fontSize: 24,
-    fontWeight: "bold",
-    color: "#333",
-  },
-  usersSection: {
-    marginTop: 20,
-  },
-  heading: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "#007bff",
-    marginBottom: 10,
-  },
-  userItem: {
-    paddingVertical: 10,
-    borderBottomWidth: 1,
-    borderBottomColor: "#ddd",
-  },
-  userNameList: {
-    fontSize: 16,
-    color: "#333",
-  },
-  noUsersText: {
-    fontSize: 16,
-    color: "#888",
-    textAlign: "center",
-    marginTop: 20,
-  },
-});
 
 export default Aboutpage;
