@@ -1,37 +1,3 @@
-<<<<<<< HEAD
-import { View, Text } from 'react-native'
-import React from 'react'
-
-const Aboutpage = () => {
-
-  
-
-  return (
-    <View className='flex-1 justify-center'>
-      <Text className='text-[40px] color-red-500 border pt-7'>This is about page aaaajjjj</Text>
-    </View>
-  )
-}
-
-export default Aboutpage
-=======
-// import { View, Text } from 'react-native'
-// import React from 'react'
-
-// const Aboutpage = () => {
-
-  
-
-//   return (
-//     <View className='flex-1 justify-center'>
-//       <Text className='text-[40px] color-red-500 border pt-7'>This is about page aaaajjjj</Text>
-//     </View>
-//   )
-// }
-
-// export default Aboutpage
-
-
 import React, { useEffect, useState } from "react";
 import { View, Text, FlatList, StyleSheet } from "react-native";
 import { useSession } from "@/context";
@@ -130,4 +96,3 @@ const styles = StyleSheet.create({
 });
 
 export default Aboutpage;
->>>>>>> d3b62ce (Initial commit: Added project files)
