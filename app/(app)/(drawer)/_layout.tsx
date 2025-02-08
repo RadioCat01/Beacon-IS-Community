@@ -6,7 +6,6 @@ const DrawerLayout = () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <Drawer>
-       
         <Drawer.Screen
           name="(tabs)"
           options={{
@@ -21,6 +20,7 @@ const DrawerLayout = () => {
             title: "Profile", 
           }}
         />
+       
       </Drawer>
     </GestureHandlerRootView>
   );
