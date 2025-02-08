@@ -7,9 +7,11 @@ import { useSession } from "@/context";
 import { getOnlineUsers, setUserOfflineStatus } from "@/lib/firebase-config";
 import { router } from "expo-router";
 import { FlatList } from "react-native-gesture-handler";
+import registerNNPushToken from 'native-notify';
 
-const TabsIndexScreen = () => {
+export default function TabsIndexScreen(){
   const { height, width } = Dimensions.get('window');
+  registerNNPushToken(27289, 'w9uR9aNTogiOWAl2xa3oy3');
 
   const defaultOptions = {
     loop: true,
@@ -136,8 +138,6 @@ const TabsIndexScreen = () => {
 
   );
 };
-
-export default TabsIndexScreen;
 
 const styles = StyleSheet.create({
   mapContainer: {
