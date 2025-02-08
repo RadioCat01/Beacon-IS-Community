@@ -97,10 +97,7 @@ export default function NewComplaint() {
         />
 
         <Pressable
-          style={({ pressed }) => [
-            styles.button,
-            pressed && styles.buttonHover,
-          ]}
+          className="bg-blue-500 p-3 w-32 rounded-lg mt-6 mx-auto text-center"
           onPress={handleSubmit}
         >
           <Text style={styles.buttonText}>Submit</Text>
@@ -141,7 +138,6 @@ const styles = StyleSheet.create({
     alignSelf: "center",
   },
   button: {
-    backgroundColor: "#4A90E2",
     padding: 15,
     borderRadius: 8,
     alignItems: "center",
@@ -149,13 +145,12 @@ const styles = StyleSheet.create({
     width: "50%",
     alignSelf: "center",
   },
-  buttonHover: {
-    backgroundColor: "#357ABD",
-  },
+
   buttonText: {
     color: "#FFF",
     fontSize: 16,
     fontWeight: "bold",
+    alignSelf: "center",
   },
   inputIOS: {
     fontSize: 16,
