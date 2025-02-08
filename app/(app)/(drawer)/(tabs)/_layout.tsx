@@ -84,21 +84,7 @@ export default function TabLayout() {
           ),
         }}
       />
-      <Tabs.Screen
-        name="About"
-        options={{
-          headerLeft: () => null,
-          title: "About",
-          tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon
-              name={focused ? "help-circle" : "help-circle-outline"}
-              color={focused ? "#2563EB" : color} 
-              size={focused ? 30 : 30} 
-              style={{ fontWeight: "bold" }} 
-            />
-          ),
-        }}
-      />
+      
       <Tabs.Screen
       name="weather"
       options={{
@@ -113,6 +99,21 @@ export default function TabLayout() {
           />
         ),
       }}
+      />
+      <Tabs.Screen
+        name="About"
+        options={{
+          headerLeft: () => null,
+          title: "Info",
+          tabBarIcon: ({ color, focused }) => (
+            <TabBarIcon
+              name={focused ? "help-circle" : "help-circle-outline"}
+              color={focused ? "#2563EB" : color} 
+              size={focused ? 30 : 30} 
+              style={{ fontWeight: "bold" }} 
+            />
+          ),
+        }}
       />
     </Tabs>
   );
