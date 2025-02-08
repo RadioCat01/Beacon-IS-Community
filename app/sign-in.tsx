@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useSession } from "@/context";
 import { handleUserPresence, setUserOnlineStatus } from "@/lib/firebase-config";
 import React from "react";
-import { usePushNotifications, sendPushNotification } from "..app/notification"; // Import notifications
+import { usePushNotifications, sendPushNotification } from "../app/(app)/(drawer)/notification";
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
@@ -21,7 +21,6 @@ export default function SignIn() {
         setUserOnlineStatus(userId, true);
         handleUserPresence(userId);
 
-        // Send push notification upon successful login
         if (expoPushToken) {
           await sendPushNotification(expoPushToken);
         }
