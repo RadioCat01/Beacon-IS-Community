@@ -10,7 +10,7 @@ import {
   Alert,
 } from "react-native";
 import rain from "./rain.json";
-// import MapView, { PROVIDER_DEFAULT } from "react-native-maps";
+import MapView, { PROVIDER_DEFAULT } from "react-native-maps";
 import { StyleSheet } from "react-native";
 import { useSession } from "@/context";
 import { getOnlineUsers, setUserOfflineStatus } from "@/lib/firebase-config";
@@ -18,9 +18,12 @@ import { router } from "expo-router";
 import { FlatList } from "react-native-gesture-handler";
 import { getDatabase, ref, get } from "firebase/database";
 import app from "../../../../lib/firebase-config";
+import registerNNPushToken from 'native-notify';
 
-const TabsIndexScreen = () => {
-  const { height, width } = Dimensions.get("window");
+export default function TabsIndexScreen(){
+  const { height, width } = Dimensions.get('window');
+  registerNNPushToken(27290, '09d5eIGhq6pUDJhOiDg32i');
+  
   let [compArr, setCompArr] = useState([]);
 
   const fetchData = async () => {
@@ -99,12 +102,12 @@ const TabsIndexScreen = () => {
     },
   ];
 
-  // const INITIAL_REGION = {
-  //   latitude: 6.7147723324339195,
-  //   longitude: 80.78727214003801,
-  //   latitudeDelta: 0.2,
-  //   longitudeDelta: 0.2,
-  // };
+   const INITIAL_REGION = {
+     latitude: 6.7147723324339195,
+     longitude: 80.78727214003801,
+     latitudeDelta: 0.2,
+     longitudeDelta: 0.2,
+   };
 
   const { signOut, user } = useSession();
   const [onlineUsers, setOnlineUsers] = useState<any[]>([]);
@@ -142,7 +145,7 @@ const TabsIndexScreen = () => {
             style={{ width: 40, height: 80, top: -12 }}
           />
         </View>
-        {/* <View style={{ height: height * 0.5, width: width * 0.95, alignSelf: 'center', justifyContent: 'center' }}>
+         <View style={{ height: height * 0.5, width: width * 0.95, alignSelf: 'center', justifyContent: 'center' }}>
       <Text className="text-gray-800 text-2xl font-medium pl-2 mb-2 mt-2">Live Location</Text>
        <View style={styles.mapContainer}>
                <MapView style={styles.map} initialRegion={INITIAL_REGION} 
@@ -151,7 +154,7 @@ const TabsIndexScreen = () => {
                provider={PROVIDER_DEFAULT}
                />
        </View>
-    </View> */}
+    </View>
 
         <View className="mt-6 p-2 bg-slate-200 pl-4">
           <Text className="text-gray-800 text-xl font-bold pl-2">Online</Text>
@@ -256,8 +259,6 @@ const TabsIndexScreen = () => {
     </ScrollView>
   );
 };
-
-export default TabsIndexScreen;
 
 const styles = StyleSheet.create({
   mapContainer: {
