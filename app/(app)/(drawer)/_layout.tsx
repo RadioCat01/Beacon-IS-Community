@@ -21,13 +21,12 @@ const DrawerLayout = () => {
           }}
         />
         <Drawer.Screen
-          name="profile"
+          name="notification"
           options={{
-            drawerLabel: "Profile", 
-            title: "Profile", 
+            drawerLabel: "Notification", 
+            title: "Notification", 
           }}
-        />
-       
+        /> 
       </Drawer>
     </GestureHandlerRootView>
   );
