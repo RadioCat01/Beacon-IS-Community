@@ -11,8 +11,7 @@ import registerNNPushToken from 'native-notify';
 
 export default function TabsIndexScreen(){
   const { height, width } = Dimensions.get('window');
-  registerNNPushToken(27289, 'w9uR9aNTogiOWAl2xa3oy3');
-
+  registerNNPushToken(27290, '09d5eIGhq6pUDJhOiDg32i');
   const defaultOptions = {
     loop: true,
     autoplay: true, 
