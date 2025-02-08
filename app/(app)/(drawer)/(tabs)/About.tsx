@@ -1,17 +1,3 @@
-
-// import { View, Text } from 'react-native'
-// import React from 'react'
-
-// const About = () => {
-//   return (
-//     <View>
-//       <Text>this is about page</Text>
-//     </View>
-//   )
-// }
-
-// export default About
-
 import React, { useState } from "react";
 import {
   View,
@@ -467,4 +453,3 @@ const styles = StyleSheet.create({
     height: 24,
   },
 });
->>>>>>> d3b62ce (Initial commit: Added project files)

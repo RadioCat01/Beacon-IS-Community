@@ -1,68 +1,36 @@
-<<<<<<< HEAD
-import { View, Text } from 'react-native'
-import React from 'react'
-
-const Aboutpage = () => {
-
-  
-
-  return (
-    <View className='flex-1 justify-center'>
-      <Text className='text-[40px] color-red-500 border pt-7'>This is about page aaaajjjj</Text>
-    </View>
-  )
-}
-
-export default Aboutpage
-=======
-// import { View, Text } from 'react-native'
-// import React from 'react'
-
-// const Aboutpage = () => {
-
-  
-
-//   return (
-//     <View className='flex-1 justify-center'>
-//       <Text className='text-[40px] color-red-500 border pt-7'>This is about page aaaajjjj</Text>
-//     </View>
-//   )
-// }
-
-// export default Aboutpage
-
-
 import React, { useEffect, useState } from "react";
-import { View, Text, FlatList, StyleSheet } from "react-native";
+import { View, Text, FlatList, StyleSheet, Pressable } from "react-native";
 import { useSession } from "@/context";
-import { getOnlineUsers } from "@/lib/firebase-config";
+import { getOnlineUsers, setUserOfflineStatus } from "@/lib/firebase-config";
+import { router } from "expo-router";
 
 const Aboutpage = () => {
-  const { user } = useSession(); // Get the current user session
+  const { signOut, user } = useSession();
   const [onlineUsers, setOnlineUsers] = useState<any[]>([]);
 
-  // Fetch online users when the component mounts
+  const handleLogout = async () => {
+    if (user?.uid) {
+      await setUserOfflineStatus(user.uid);
+    }
+    await signOut();
+    router.replace("/sign-in");
+  };
+
   useEffect(() => {
     getOnlineUsers((users: any) => {
-      const onlineUsersList = Object.values(users || {})
-        .filter((user: any) => user.isOnline) // Filter only online users
-        .sort((a: any, b: any) => a.username.localeCompare(b.username)); // Sort alphabetically by username
+      const onlineUsersList = Object.values(users || {}).filter((user: any) => user.isOnline);
       setOnlineUsers(onlineUsersList);
     });
   }, []);
 
-  // Extract the display name from the user's email or default to "Guest"
-  const displayName = user?.displayName || user?.email?.split("@")[0] || "Guest";
-
   return (
     <View style={styles.container}>
-      {/* Welcome Message */}
+     
       <View style={styles.welcomeSection}>
         <Text style={styles.welcomeText}>Welcome back,</Text>
-        <Text style={styles.userName}>{displayName}</Text>
       </View>
 
-      {/* Online Users Section */}
+     
       <View style={styles.usersSection}>
         <Text style={styles.heading}>Online Users</Text>
         {onlineUsers.length > 0 ? (
@@ -79,11 +47,16 @@ const Aboutpage = () => {
           <Text style={styles.noUsersText}>No users are currently online.</Text>
         )}
       </View>
+      <Pressable
+        onPress={handleLogout}
+        className="bg-red-500 px-6 py-3 rounded-lg active:bg-red-600"
+      >
+        <Text className="text-white font-semibold text-base">Logout</Text>
+      </Pressable>
     </View>
   );
 };
 
-// Styles
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -130,4 +103,3 @@ const styles = StyleSheet.create({
 });
 
 export default Aboutpage;
->>>>>>> d3b62ce (Initial commit: Added project files)
