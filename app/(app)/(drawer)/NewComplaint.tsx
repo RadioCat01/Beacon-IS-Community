@@ -9,6 +9,7 @@ import {
   Image,
 } from "react-native";
 import RNPickerSelect from "react-native-picker-select";
+import {Picker} from '@react-native-picker/picker';
 import { getDatabase, ref, push, set } from "firebase/database";
 import app from "../../../lib/firebase-config";
 import { useSession } from "@/context";
@@ -78,26 +79,25 @@ export default function NewComplaint() {
         />
 
         <Text style={styles.labelText}>Complaint Type</Text>
-        <RNPickerSelect
-          onValueChange={setComplaintType}
-          items={[
-            { label: "Flood", value: "Flood" },
-            { label: "Landslide", value: "Landslide" },
-            { label: "Tornado", value: "Tornado" },
-            { label: "Earthquake", value: "Earthquake" },
-            { label: "Hurricane", value: "Hurricane" },
-            { label: "Heatwave", value: "Heatwave" },
-            { label: "Wildfire", value: "Wildfire" },
-          ]}
-          placeholder={{ label: "Select complaint type", value: null }}
-          style={{
-            inputAndroid: styles.inputAndroid,
-            inputIOS: styles.inputIOS,
-          }}
-        />
+        <View className="mt-[-80px]">
+          <Picker
+            selectedValue={complaintType}
+            onValueChange={(itemValue) => setComplaintType(itemValue)}
+           
+          >
+            <Picker.Item label="Select complaint type" value="" color="#999" />
+            <Picker.Item label="Flood" value="Flood" color="#1e40af" />
+            <Picker.Item label="Landslide" value="Landslide" color="#b91c1c" />
+            <Picker.Item label="Tornado" value="Tornado" color="#2563eb" />
+            <Picker.Item label="Earthquake" value="Earthquake" color="#9333ea" />
+            <Picker.Item label="Hurricane" value="Hurricane" color="#f59e0b" />
+            <Picker.Item label="Heatwave" value="Heatwave" color="#dc2626" />
+            <Picker.Item label="Wildfire" value="Wildfire" color="#d97706" />
+          </Picker>
+        </View>
 
         <Pressable
-          className="bg-blue-500 p-3 w-32 rounded-lg mt-6 mx-auto text-center"
+          className="bg-blue-500 p-3 w-32 rounded-lg mt-2 mx-auto text-center"
           onPress={handleSubmit}
         >
           <Text style={styles.buttonText}>Submit</Text>
