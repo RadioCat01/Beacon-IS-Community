@@ -218,9 +218,9 @@ export default function TabsIndexScreen(){
           </ScrollView>
         </View>
 
-        <View className="p-4 mt-2">
+        <View className="p-4 mt-[-20px]">
           <Text className="text-gray-800 text-xl font-bold mb-[-10px]">
-            Complaints
+            Current Reportings
           </Text>
           <ScrollView
             horizontal
