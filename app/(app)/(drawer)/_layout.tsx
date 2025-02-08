@@ -20,13 +20,7 @@ const DrawerLayout = () => {
             title: "Profile", 
           }}
         />
-        <Drawer.Screen
-          name="Aboutpage"
-          options={{
-            drawerLabel: "Aboutpage", 
-            title: "Aboutpage", 
-          }}
-        />
+       
       </Drawer>
     </GestureHandlerRootView>
   );

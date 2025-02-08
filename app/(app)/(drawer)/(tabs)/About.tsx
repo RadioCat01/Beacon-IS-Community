@@ -134,7 +134,7 @@ const Home: React.FC = () => {
         </View>
       )}
 
-      {/* Modal for Form */}
+    
       <Modal visible={isFormOpen} transparent={true} animationType="slide">
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
@@ -170,7 +170,7 @@ const Home: React.FC = () => {
               onChangeText={(text) => handleInputChange("phoneNumber", text)}
             />
 
-            {/* Image Upload Section */}
+            
             <View style={styles.imageUploadContainer}>
               <TextInput
                 style={styles.imageUploadInput}
@@ -179,10 +179,6 @@ const Home: React.FC = () => {
                 value={formData.photo ? "Photo selected" : ""}
               />
               <TouchableOpacity onPress={handleFileChange} style={styles.imageUploadIcon}>
-                {/* <Image
-                  source={require("app\(app)\(drawer)\(tabs)\upload-icon.pngapp\(app)\(drawer)\(tabs)\upload-icon.png")} // Replace with your upload icon path
-                  style={styles.uploadIcon}
-                /> */}
               </TouchableOpacity>
             </View>
 
