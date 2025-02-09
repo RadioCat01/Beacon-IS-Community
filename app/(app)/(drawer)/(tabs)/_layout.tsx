@@ -94,7 +94,7 @@ export default function TabLayout() {
           <TabBarIcon
             name={focused ? "cloud" : "cloud-outline"}
             color={focused ? "#2563EB" : color} 
-            size={focused ? 60 : 60} 
+            size={focused ? 30 : 30} 
             style={{ fontWeight: "bold" }} 
           />
         ),
@@ -109,7 +109,7 @@ export default function TabLayout() {
             <TabBarIcon
               name={focused ? "help-circle" : "help-circle-outline"}
               color={focused ? "#2563EB" : color} 
-              size={focused ? 60 : 60} 
+              size={focused ? 30 : 30} 
               style={{ fontWeight: "bold" }} 
             />
           ),
