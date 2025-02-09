@@ -1,14 +1,6 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-  Image,
-} from "react-native";
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image} from "react-native";
 import * as ImagePicker from "expo-image-picker";
-
 import { NavigationProp } from '@react-navigation/native';
 
 const ReportForm = ({ navigation }: { navigation: NavigationProp<any> }) => {

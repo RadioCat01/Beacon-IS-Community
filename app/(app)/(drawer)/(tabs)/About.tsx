@@ -1,15 +1,5 @@
 import React, { useState } from "react";
-import {
-  View,
-  Text,
-  TextInput,
-  Button,
-  StyleSheet,
-  TouchableOpacity,
-  ScrollView,
-  Modal,
-  Image,
-} from "react-native";
+import { View, Text, TextInput, Button, StyleSheet, TouchableOpacity, ScrollView, Modal, Image } from "react-native";
 
 const Home: React.FC = () => {
   const [isFormOpen, setIsFormOpen] = useState(false);
