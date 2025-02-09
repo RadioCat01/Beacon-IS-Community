@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity, Image } from "react-native";
 import { useRouter } from "expo-router";
 
-//this is abouit the earthQuackes
+
 const EarthquakeScreen = () => {
   const router = useRouter();
   return (
