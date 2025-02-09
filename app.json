@@ -37,6 +37,15 @@
     ],
     "experiments": {
       "typedRoutes": true
-    }
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "93b7b7f5-983f-4179-adad-4718ea26bd3f"
+      }
+    },
+    "owner": "radiocat2000"
   }
 }
