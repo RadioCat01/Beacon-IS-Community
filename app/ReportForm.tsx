@@ -76,7 +76,7 @@ const ReportForm = ({ navigation }: { navigation: NavigationProp<any> }) => {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Disaster Incident Report Form</Text>
+      <Text style={styles.title}>Disaster Incident Form</Text>
 
       {/* Form Fields */}
       <TextInput
