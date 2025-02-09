@@ -60,11 +60,11 @@ export default LandslideScreen;
 const styles = StyleSheet.create({
   container: {
     flexGrow: 1,
-    padding: 16,
+    padding: 26,
     backgroundColor: "#f9f9f9",
   },
   title: {
-    fontSize: 24,
+    fontSize: 34,
     fontWeight: "bold",
     color: "#2563eb",
     textAlign: "center",
