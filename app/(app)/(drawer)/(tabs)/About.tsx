@@ -143,31 +143,31 @@ const Home: React.FC = () => {
               style={styles.input}
               placeholder="Name"
               value={formData.name}
-              onChangeText={(text) => handleInputChange("your name", text)}
+              onChangeText={(text) => handleInputChange("name", text)}
             />
             <TextInput
               style={styles.input}
               placeholder="Address"
               value={formData.address}
-              onChangeText={(text) => handleInputChange("your address", text)}
+              onChangeText={(text) => handleInputChange("address", text)}
             />
             <TextInput
               style={styles.input}
               placeholder="Location of Incident"
               value={formData.location}
-              onChangeText={(text) => handleInputChange("current location", text)}
+              onChangeText={(text) => handleInputChange("location", text)}
             />
             <TextInput
               style={styles.input}
               placeholder="Description of Disaster"
               value={formData.description}
-              onChangeText={(text) => handleInputChange("short description", text)}
+              onChangeText={(text) => handleInputChange("description", text)}
             />
             <TextInput
               style={styles.input}
               placeholder="Phone Number"
               value={formData.phoneNumber}
-              onChangeText={(text) => handleInputChange("your phoneNumber", text)}
+              onChangeText={(text) => handleInputChange("phoneNumber", text)}
             />
 
             
