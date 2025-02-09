@@ -5,7 +5,7 @@ import { useSession } from "@/context";
 import { handleUserPresence, setUserOnlineStatus } from "@/lib/firebase-config";
 import React from "react";
 
-//this is about sign in
+
 export default function SignIn() {
 
   const [email, setEmail] = useState("");
