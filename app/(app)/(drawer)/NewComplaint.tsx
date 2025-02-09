@@ -109,7 +109,7 @@ export default function NewComplaint() {
 
 const styles = StyleSheet.create({
   container: {
-    display: "flex",
+    
     flex: 1,
     padding: 20,
     justifyContent: "center",
