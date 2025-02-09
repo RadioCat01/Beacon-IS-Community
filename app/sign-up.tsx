@@ -6,6 +6,7 @@ import { writeUserData } from "@/lib/firebase-config";
 import React from "react";
 
 export default function SignUp() {
+  //abcdefgh
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
