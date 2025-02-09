@@ -6,7 +6,6 @@ import "../global.css";
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 import React from 'react';
 
-//this has the everything
 export default function RootLayout() {
   
   return (
