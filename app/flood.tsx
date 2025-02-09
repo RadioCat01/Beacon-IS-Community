@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, ScrollView, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 
-
+//Thuis is all about floodings
 
 const FloodScreen = () => {
   const router = useRouter();
