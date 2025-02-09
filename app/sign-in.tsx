@@ -53,8 +53,8 @@ export default function SignIn() {
               <Image 
                 source={require('../assets/images/pngwing.com.png')} 
                 style={{
-                width: 80, 
-                height: 120, 
+                width: 100, 
+                height: 140, 
                 marginLeft: -14,
                 marginBottom: 70
                          }} />
