@@ -5,6 +5,8 @@ import { useSession } from "@/context";
 import { writeUserData } from "@/lib/firebase-config";
 import React from "react";
 
+
+//This has the signup part
 export default function SignUp() {
 
   const [email, setEmail] = useState("");
