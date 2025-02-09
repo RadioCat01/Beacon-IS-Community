@@ -97,7 +97,7 @@ export default function NewComplaint() {
         </View>
 
         <Pressable
-          className="bg-blue-500 p-3 w-32 rounded-lg mt-2 mx-auto text-center"
+          className="bg-blue-500 p-3 w-32 rounded-lg mt-2 mx-auto"
           onPress={handleSubmit}
         >
           <Text style={styles.buttonText}>Submit</Text>
